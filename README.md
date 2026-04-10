@@ -10,13 +10,14 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 1. [Numerical Linear Algebra](#1-numerical-linear-algebra)
 2. [Climate, Ocean & Weather Modeling](#2-climate-ocean--weather-modeling)
-3. [GFDL Ecosystem (NOAA)](#3-gfdl-ecosystem-noaa)
-4. [Computational Fluid Dynamics](#4-computational-fluid-dynamics)
-5. [Molecular Dynamics / Quantum Chemistry / Materials Science](#5-molecular-dynamics--quantum-chemistry--materials-science)
-6. [Astrophysics / Space Science](#6-astrophysics--space-science)
-7. [Finite Element / Structural Analysis](#7-finite-element--structural-analysis)
-8. [Optimization & Mathematical Libraries](#8-optimization--mathematical-libraries)
-9. [General Fortran Libraries & Frameworks](#9-general-fortran-libraries--frameworks)
+3. [Earth Science & Geophysics](#3-earth-science--geophysics)
+4. [GFDL Ecosystem (NOAA)](#4-gfdl-ecosystem-noaa)
+5. [Computational Fluid Dynamics](#5-computational-fluid-dynamics)
+6. [Molecular Dynamics / Quantum Chemistry / Materials Science](#6-molecular-dynamics--quantum-chemistry--materials-science)
+7. [Astrophysics / Space Science](#7-astrophysics--space-science)
+8. [Finite Element / Structural Analysis](#8-finite-element--structural-analysis)
+9. [Optimization & Mathematical Libraries](#9-optimization--mathematical-libraries)
+10. [General Fortran Libraries & Frameworks](#10-general-fortran-libraries--frameworks)
 
 ---
 
@@ -57,10 +58,204 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 | **CICE** | Los Alamos Sea Ice Model — used in CESM and many coupled systems | https://github.com/CICE-Consortium/CICE | Open-source | Verified (unspecified) | Open-source verified |
 | **MODFLOW 6** | USGS modular groundwater flow simulation (object-oriented Fortran 2008) | https://github.com/MODFLOW-ORG/modflow6 | Open-source | Verified (unspecified) | Open-source verified |
 | **PFLOTRAN** | Massively parallel subsurface flow and reactive transport (Fortran 2003/2008) | https://pflotran.org/ | Open-source | Verified (unspecified) | Open-source verified |
+| **MITgcm** | MIT General Circulation Model — versatile non-hydrostatic model for ocean, atmosphere, and climate with adjoint capabilities | https://github.com/MITgcm | Open-source | Verified (unspecified) | Open-source verified |
+| **WAVEWATCH III** | NOAA third-generation spectral wave model for operational wave forecasting (5D: space, time, spectrum) | https://github.com/NOAA-EMC/WW3 | Open-source | Verified (unspecified) | Open-source verified |
+| **GOTM** | General Ocean Turbulence Model — 1D water column model with state-of-the-art turbulence parameterizations | https://github.com/gotm-model/code | Open-source | GPL | Open-source (GPL) |
+| **GEOS-Chem** | Global 3D atmospheric chemistry model driven by NASA GEOS meteorological data | https://github.com/geoschem/geos-chem | Open-source | MIT | Open-source (MIT) |
+| **CMAQ** | Community Multiscale Air Quality Model (US EPA) — ozone, particulates, toxics, and deposition | https://github.com/USEPA/CMAQ | Open-source | Verified (unspecified) | Open-source verified |
+| **TIEGCM** | NCAR Thermosphere-Ionosphere-Electrodynamics General Circulation Model — first-principles upper-atmosphere model | https://www.hao.ucar.edu/modeling/tgcm/tie.php | Open-source | Verified (unspecified) | Open-source verified |
+| **WRF-Hydro / NWM** | Community hydrologic modeling system; a configuration serves as the NOAA National Water Model | https://github.com/NCAR/wrf_hydro_nwm_public | Open-source | Verified (unspecified) | Open-source verified |
 
 ---
 
-## 3. GFDL Ecosystem (NOAA)
+## 3. Earth Science & Geophysics
+
+### Seismology & Solid Earth Geophysics
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **SEISMIC_CPML** | 16 Fortran 90 programs for 2D/3D elastic, viscoelastic, and poroelastic wave propagation with PML boundaries | https://github.com/geodynamics/seismic_cpml | Open-source | CIG | Open-source (CIG) |
+| **AxiSEM** | Parallel spectral-element method for 3D wave propagation in axisymmetric spherical structures | https://github.com/geodynamics/axisem | Open-source | GPL | Open-source (GPL) |
+| **SW4** | Seismic Waves 4th order — 3D seismic modeling with free surface and absorbing super-grid conditions | https://github.com/geodynamics/sw4 | Open-source | CIG | Open-source (CIG); mixed Fortran + C++ |
+| **OpenSWPC** | Seismic wave propagation by parallel finite difference for 3D heterogeneous viscoelastic media (Fortran 2003) | https://github.com/OpenSWPC/OpenSWPC | Open-source | MIT | Open-source (MIT) |
+| **GEMINI** | Green's functions and surface wave modes for elastic waves in 1D depth-dependent media | https://github.com/seismology-RUB/GEMINI | Open-source | Verified (unspecified) | Open-source verified |
+
+### Land Surface Models & Terrestrial Ecosystems
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **ORCHIDEE** | IPSL land surface model — terrestrial carbon, energy, water cycles, vegetation dynamics, and soil carbon (Fortran 90) | https://forge.ipsl.jussieu.fr/orchidee | Open-source | CeCILL | Open-source (CeCILL) |
+| **JULES** | Joint UK Land Environment Simulator — Met Office community land surface model for climate and NWP | https://jules-lsm.github.io | Open-source | Verified (unspecified) | Open-source verified; requires MOSRS registration |
+| **Noah-MP** | Noah with Multi-Parameterization — modular land surface model used in WRF, CESM, and NOAA NWM | https://github.com/NCAR/noahmp | Open-source | Verified (unspecified) | Open-source verified |
+| **CABLE** | Community Atmosphere Biosphere Land Exchange — Australian LSM for the ACCESS climate model (CSIRO) | https://github.com/CABLE-LSM/CABLE | Open-source | BSD/MIT modified | Open-source (CSIRO BSD/MIT modified) |
+| **SURFEX/ISBA** | Meteo-France surface modeling platform including ISBA land scheme and Crocus snowpack model | https://www.umr-cnrm.fr/surfex/ | Open-source | CeCILL-C | Open-source (CeCILL-C) |
+| **CLASSIC** | Canadian Land Surface Scheme including Biogeochemical Cycles — successor to CLASS/CTEM (Modern Fortran) | https://cccma.gitlab.io/classic_pages/ | Open-source | Verified (unspecified) | Open-source verified |
+| **ELM** | E3SM Land Model — DOE land component derived from CLM4.5 with phosphorus cycle and microbial dynamics | https://github.com/E3SM-Project/E3SM | Open-source | BSD-3-Clause | Open-source (BSD-3-Clause) |
+| **Simsphere** | 1D SVAT model simulating heat and moisture transfer between plants, soil, and atmosphere (Penn State) | https://github.com/simsphere/simsphere | Open-source | Verified (unspecified) | Open-source verified |
+
+> **Note:** BEPS (Biosphere-atmosphere Exchange Process Simulator) is a related ecosystem model for carbon/water/energy fluxes, but is implemented in C, not Fortran. See https://github.com/JChen-UToronto/BEPS_hourly_site.
+
+### Dynamic Global Vegetation Models
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **LPJ-LMfire** | DGVM with fire dynamics and biomass burning — vegetation establishment, growth, and competition | https://github.com/ARVE-Research/LPJ-LMfire | Open-source | Verified (unspecified) | Open-source verified |
+| **SEIB-DGVM** | Spatially Explicit Individual-Based DGVM — simulates vegetation in 30m x 30m virtual forests | https://seib-dgvm.com | Open-source | Verified (unspecified) | Open-source verified |
+| **JeDi-DGVM** | Jena Diversity DGVM — focusing on plant functional diversity | https://github.com/ryanpavlick/JeDi-DGVM | Open-source | Verified (unspecified) | Open-source verified |
+| **SDGVM / SOUP** | Sheffield Dynamic Global Vegetation Model — cohort-based DGVM (Fortran 2003) | https://github.com/marklomas60/SOUP | Open-source | Verified (unspecified) | Open-source verified |
+| **VOM** | Vegetation Optimality Model — predicts vegetation water use without site-specific calibration | https://github.com/schymans/VOM | Open-source | Verified (unspecified) | Open-source verified |
+
+### Hydrology & Watershed Modeling
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **SWAT+** | Soil and Water Assessment Tool Plus — watershed model for hydrology, water quality, and land management (USDA-ARS / Texas A&M) | https://github.com/swat-model/swatplus | Open-source | Verified (unspecified) | Open-source verified |
+| **PRMS** | USGS Precipitation Runoff Modeling System — distributed-parameter watershed hydrology model | https://github.com/nhm-usgs/prms | Open-source | Public domain (USGS) | Public domain (USGS) |
+| **SUMMA** | Structure for Unifying Multiple Modeling Alternatives — NCAR hydrologic modeling framework with multiple model structure options | https://github.com/NCAR/summa | Open-source | GPL-3.0 | Open-source (GPL-3.0) |
+| **SMASH** | Spatially distributed Modeling and ASsimilation for Hydrology — Fortran engine with Python interface | https://github.com/DassHydro/smash | Open-source | Verified (unspecified) | Open-source verified |
+| **TOPMODEL** | Topography-based hydrological model with NOAA BMI interface (Fortran, Keith Beven 1995) | https://github.com/NOAA-OWP/topmodel | Open-source | Verified (unspecified) | Open-source verified |
+
+### Coastal, Tsunami & Ocean Wave Modeling
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **GeoClaw** | Clawpack module for geophysical flows — tsunami, storm surge, and overland flooding with AMR | https://github.com/clawpack/geoclaw | Open-source | BSD | Open-source (BSD) |
+| **ADCIRC** | Advanced Circulation — finite element storm surge, tidal, and wind-driven circulation on unstructured grids | https://github.com/adcirc/adcirc | Open-source | Verified (unspecified) | Open-source verified |
+| **SCHISM** | Semi-implicit Cross-scale Hydroscience Integrated System Model — unstructured-grid 3D baroclinic creek-to-ocean model | https://github.com/schism-dev/schism | Open-source | Apache-2.0 | Open-source (Apache-2.0) |
+| **OceanWave3D** | Simulation of nonlinear and dispersive free surface waves in varying bathymetries | https://github.com/apengsigkarup/OceanWave3D-Fortran90 | Open-source | GPL | Open-source (GPL) |
+| **TELEMAC-MASCARET** | Suite for 2D/3D free-surface hydraulics, sediment transport, and wave modeling (EDF, France) | https://www.opentelemac.org/ | Open-source | GPL-3.0 | Open-source (GPL-3.0) |
+| **Clawpack / AMRClaw** | Conservation Laws Package — AMR for hyperbolic PDEs with Fortran Riemann solvers | https://github.com/clawpack | Open-source | BSD | Open-source (BSD) |
+| **SWAN** | Simulating Waves Nearshore — third-generation wave model for coastal regions (Delft University) | https://swanmodel.sourceforge.io/ | Open-source | Verified (unspecified) | Open-source verified |
+| **Delft3D** | 2D/3D modeling suite for hydrodynamics, sediment transport, morphology, and water quality | https://oss.deltares.nl/web/delft3d | Open-source | LGPL | Open-source (LGPL); mixed Fortran + C++ |
+| **XBeach** | Hydrodynamic and morphodynamic processes on sandy coasts — dune erosion and breaching | https://github.com/openearth/xbeach | Open-source | Verified (unspecified) | Open-source verified |
+
+### River Routing & Flood Modeling
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **mizuRoute** | NCAR reach-based river routing — impulse response, kinematic wave, diffusive wave methods | https://github.com/ESCOMP/mizuRoute | Open-source | Verified (unspecified) | Open-source verified |
+| **CaMa-Flood** | Catchment-based Macro-scale Floodplain model — global river hydrodynamics with floodplain storage | https://github.com/global-hydrodynamics/CaMa-Flood_v4 | Open-source | Apache-2.0 | Open-source (Apache-2.0) |
+| **RAPID** | Routing Application for Parallel computatIon of Discharge — large river network routing | https://github.com/c-h-david/rapid | Open-source | Verified (unspecified) | Open-source verified |
+| **LISFLOOD-FP** | 2D hydrodynamic model for floodplain inundation on regular grids (University of Bristol) | https://github.com/openearth/lisflood-fp-bmi | Open-source | Verified (unspecified) | Open-source verified; mixed Fortran + C++ |
+
+### Sediment Transport & Geomorphology
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **FastScapeLib** | Efficient O(n) algorithms for landscape evolution — stream power law, hillslope diffusion | https://github.com/fastscape-lem/fastscapelib-fortran | Open-source | Verified (unspecified) | Open-source verified |
+| **WASA-SED** | Hydrological and sediment flux simulation for meso-scale catchments | https://github.com/TillF/WASA-SED | Open-source | Verified (unspecified) | Open-source verified |
+| **WEPP** | USDA Water Erosion Prediction Project — process-based soil erosion model | https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/wepp/ | Open-source | Verified (unspecified) | Open-source verified |
+
+### Atmospheric Chemistry & Air Quality
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **EMEP/MSC-W** | European air quality model for acidifying/eutrophying pollutants, photo-oxidants, and PM (Norwegian Met Institute) | https://github.com/metno/emep-ctm | Open-source | Verified (unspecified) | Open-source verified |
+| **AtChem2** | Atmospheric chemistry box-model for the Master Chemical Mechanism (MCM) gas-phase oxidation | https://github.com/AtChem/AtChem2 | Open-source | MIT | Open-source (MIT) |
+| **DSMACC** | Dynamically Simple Model of Atmospheric Chemical Complexity — tropospheric chemistry box model | https://github.com/barronh/DSMACC | Open-source | Verified (unspecified) | Open-source verified |
+
+### Geodesy & Gravity
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **SHTOOLS** | Spherical Harmonic Tools — Fortran 95/Python for spherical harmonic transforms, gravity and magnetic field analysis | https://github.com/SHTOOLS/SHTOOLS | Open-source | BSD-3-Clause | Open-source (BSD-3-Clause) |
+| **GeographicLib-Fortran** | Fortran implementation of geodesic routines for solving geodesic problems on an ellipsoid | https://github.com/geographiclib/geographiclib-fortran | Open-source | MIT | Open-source (MIT) |
+| **Fortran-Astrodynamics-Toolkit** | Modern Fortran library with geodesy, gravity field evaluation, and coordinate transformations | https://github.com/jacobwilliams/Fortran-Astrodynamics-Toolkit | Open-source | BSD-3-Clause | Open-source (BSD-3-Clause) |
+
+### Geodynamics & Mantle Convection
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **CitcomS** | Finite element thermochemical convection in Earth's mantle in spherical shell geometry | https://github.com/geodynamics/citcoms | Open-source | GPL | Open-source (GPL); mixed C + Fortran |
+| **ECOMAN** | Geodynamic and seismological modeling of mechanical anisotropy in mantle aggregates (OpenMP) | https://github.com/mfaccenda/ECOMAN2.0-geodynamics | Open-source | Verified (unspecified) | Open-source verified |
+| **LaMEM** | Lithosphere and Mantle Evolution Model — parallel 3D thermo-mechanical geodynamics on PETSc | https://github.com/UniMainzGeo/LaMEM | Open-source | Verified (unspecified) | Open-source verified; mixed C + Fortran |
+
+### Glaciology & Ice Sheet Modeling
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **CISM** | Community Ice Sheet Model — next-generation model for ice sheet evolution and sea level rise | https://github.com/CISM/cism | Open-source | LGPL | Open-source (LGPL) |
+| **PISM** | Parallel Ice Sheet Model — framework for thermodynamically coupled ice sheets and glaciers | https://github.com/pism/pism | Open-source | GPL-3.0 | Open-source (GPL-3.0); mixed C++ + Fortran |
+| **Elmer/Ice** | Full-Stokes finite element ice sheet/flow model, add-on to Elmer multiphysics suite | https://elmerice.elmerfem.org/ | Open-source | GPL | Open-source (GPL); see also Elmer in Section 8 |
+
+### Space Weather & Ionosphere
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **GITM** | Global Ionosphere/Thermosphere Model — 3D coupled ionosphere-thermosphere system (Fortran 90) | https://github.com/GITMCode/GITM | Open-source | Verified (unspecified) | Open-source verified |
+| **SWMF** | Space Weather Modeling Framework — modular system coupling solar corona through radiation belt (~700K lines Fortran) | https://github.com/MSTEM-QUDA | Open-source | Apache-2.0 | Open-source (Apache-2.0) |
+| **IRI** | International Reference Ionosphere — empirical standard model of the ionosphere (Fortran core with Python/Matlab wrappers) | https://github.com/space-physics/iri2020 | Open-source | Verified (unspecified) | Open-source verified |
+| **IRBEM** | International Radiation Belt Environment Modeling — magnetic coordinates, geophysics model evaluation | https://github.com/PRBEM/IRBEM | Open-source | Verified (unspecified) | Open-source verified |
+| **EPOCH** | Particle-in-cell code for plasma physics applicable to space weather and laser-plasma interaction | https://github.com/epochpic/epoch | Open-source | GPL-3.0 | Open-source (GPL-3.0) |
+
+### Volcanic Modeling & Ash Transport
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **FALL3D** | Eulerian model for atmospheric transport and deposition of volcanic particles, aerosols, and radionuclides | https://fall3d-suite.gitlab.io/ | Open-source | Verified (unspecified) | Open-source verified |
+| **PLUME-MoM-TSM** | Steady-state integral volcanic plume model with two-size moment method for grain-size distribution | https://github.com/demichie/PLUME-MoM-TSM | Open-source | Verified (unspecified) | Open-source verified |
+| **Ash3d** | USGS volcanic ash transport and dispersion model with MetReader and Projection libraries | https://github.com/DOI-USGS/volcano-ash3d-metreader | Open-source | Public domain (USGS) | Public domain (USGS) |
+
+### Radiative Transfer
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **LBLRTM** | Line-By-Line Radiative Transfer Model — accurate UV to sub-millimeter, derived from FASCODE (AER) | https://github.com/AER-RC/LBLRTM | Open-source | Verified (unspecified) | Open-source verified |
+| **SBDART** | Santa Barbara DISORT Atmospheric Radiative Transfer — plane-parallel model based on DISORT + LOWTRAN | https://github.com/paulricchiazzi/SBDART | Open-source | Verified (unspecified) | Open-source verified |
+| **NEMESIS** | General-purpose radiative transfer and retrieval for visible/infrared observations of any planetary atmosphere | https://nemesiscode.github.io/ | Open-source | Verified (unspecified) | Open-source verified |
+| **DMRT-ML** | Dense Media Radiative Transfer Multi-Layers — microwave emission from snowpack | https://github.com/ghislainp/dmrtml | Open-source | Verified (unspecified) | Open-source verified |
+| **ecRad** | ECMWF atmospheric radiation scheme including RRTMG and ecCKD (Fortran 2003) | https://github.com/ecmwf-ifs/ecrad | Open-source | Apache-2.0 | Open-source (Apache-2.0) |
+| **SOCRATES** | UK Met Office Suite Of Community RAdiative Transfer codes (Edwards & Slingo) | https://github.com/FormingWorlds/SOCRATES | Open-source | Verified (unspecified) | Open-source verified |
+| **SPARTACUS-Surface** | ECMWF radiative transfer in complex 3D surface canopies — forests and cities | https://github.com/ecmwf/spartacus-surface | Open-source | Verified (unspecified) | Open-source verified |
+| **libRadtran** | Library for solar and thermal radiation calculations in the Earth's atmosphere | https://www.libradtran.org/ | Open-source | GPL | Open-source (GPL); mixed C + Fortran |
+| **DISORT** | DIScrete Ordinate Radiative Transfer — foundational solver for scattering/emitting layered media | Included in libRadtran | Open-source | Verified (unspecified) | Open-source verified |
+
+### Snow & Permafrost Models
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **FSM2** | Flexible Snow Model — multi-physics energy balance model of snow on ground and in forest canopies | https://github.com/RichardEssery/FSM2 | Open-source | Verified (unspecified) | Open-source verified |
+| **Crocus** | Detailed snowpack model for snow metamorphism and layered properties — embedded in SURFEX/ISBA | https://www.umr-cnrm.fr/surfex/ | Open-source | CeCILL-C | Open-source (CeCILL-C); part of SURFEX |
+| **UEB** | Utah Energy Balance snowmelt model (Utah State University) | https://github.com/dtarb/UEB | Open-source | Verified (unspecified) | Open-source verified |
+| **Parallel-SnowModel** | Parallelized SnowModel using Coarray Fortran (NCAR) | https://github.com/NCAR/Parallel-SnowModel | Open-source | Verified (unspecified) | Open-source verified |
+| **GIPL** | Geophysical Institute Permafrost Laboratory model — phase changes in non-homogeneous soil (UAF) | https://github.com/Elchin/GIPL | Open-source | Verified (unspecified) | Open-source verified |
+
+### Soil, Agriculture & Environmental Hazards
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **DSSAT** | Decision Support System for Agrotechnology Transfer — cropping system model for 45+ crops | https://github.com/DSSAT/dssat-csm-os | Open-source | BSD-3-Clause | Open-source (BSD-3-Clause) |
+| **WOFOST** | WOrld FOod STudies — crop simulation under various environmental and management conditions | https://github.com/ajwdewit/WOFOST | Open-source | Verified (unspecified) | Open-source verified |
+| **plantFEM** | Plant/farming simulator based on Finite Element Method for crops and soil foundations (Fortran 2003) | https://github.com/kazulagi/plantFEM | Open-source | Verified (unspecified) | Open-source verified |
+| **FDS** | Fire Dynamics Simulator — large-eddy simulation for smoke and heat transport from fires (NIST, Fortran 2018) | https://github.com/firemodels/fds | Open-source | Public domain (NIST) | Public domain (NIST) |
+| **CFAST** | Consolidated Model of Fire and Smoke Transport — two-zone fire model for compartmented structures (NIST) | https://github.com/firemodels/cfast | Open-source | Verified (unspecified) | Open-source verified |
+| **ELMFIRE** | Eulerian Level Set Model of FIRE spread — operational wildland fire spread model | https://github.com/lautenberger/elmfire | Open-source | EPL-2.0 | Open-source (EPL-2.0) |
+| **SWAP** | Soil Water Atmosphere Plant — agro-/ecohydrological model from Wageningen University | https://github.com/SWAP-model/ | Open-source | Verified (unspecified) | Open-source verified |
+
+### Nuclear & Particle Physics
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **OpenMC** | Community Monte Carlo neutron and photon transport — k-eigenvalue and fixed source (Fortran 2008) | https://github.com/openmc-dev/openmc | Open-source | MIT | Open-source (MIT) |
+| **NJOY2016** | Nuclear data processing system — converts ENDF-format data for reactor analysis (LANL/Sandia) | https://github.com/njoy/NJOY2016 | Open-source | BSD-3-Clause | Open-source (BSD-3-Clause) |
+| **DRAGON** | Lattice physics code for neutron behavior in nuclear reactor fuel assemblies | https://github.com/Ahmed-Naceur/dragon5 | Open-source | Verified (unspecified) | Open-source verified |
+
+### Geothermal & Reservoir Simulation
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **Waiwera** | Parallel geothermal flow simulator with PETSc — phase transitions, fractured media (Fortran 2003) | https://github.com/waiwera/waiwera | Open-source | LGPL-3.0 | Open-source (LGPL-3.0) |
+| **TOUGH2** | Multi-dimensional simulator for coupled transport of water, vapor, gas, and heat in porous media (LBNL) | https://tough.lbl.gov/ | Restricted | N/A | Not open-source / restricted |
+
+### Electromagnetics
+
+| Package | Description | Source | Open-Source Status | License | Notes |
+|---------|-------------|--------|--------------------|---------|-------|
+| **NEC2** | Numerical Electromagnetics Code — moment method for wire/surface antenna analysis (LLNL) | https://github.com/flintoftid/aegnec2 | Open-source | Public domain | Public domain (US Government) |
+
+---
+
+## 4. GFDL Ecosystem (NOAA)
 
 ### Core Model Components
 
@@ -117,7 +312,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 4. Computational Fluid Dynamics
+## 5. Computational Fluid Dynamics
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -132,7 +327,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 5. Molecular Dynamics / Quantum Chemistry / Materials Science
+## 6. Molecular Dynamics / Quantum Chemistry / Materials Science
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -155,7 +350,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 6. Astrophysics / Space Science
+## 7. Astrophysics / Space Science
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -169,7 +364,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 7. Finite Element / Structural Analysis
+## 8. Finite Element / Structural Analysis
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -182,7 +377,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 8. Optimization & Mathematical Libraries
+## 9. Optimization & Mathematical Libraries
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -200,7 +395,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 
 ---
 
-## 9. General Fortran Libraries & Frameworks
+## 10. General Fortran Libraries & Frameworks
 
 | Package | Description | Source | Open-Source Status | License | Notes |
 |---------|-------------|--------|--------------------|---------|-------|
@@ -227,3 +422,7 @@ Archiving workflow and project trace to-dos: [ARCHIVE_TRACES_TODO.md](ARCHIVE_TR
 - [Fortran Wiki](https://fortranwiki.org/)
 - [Awesome Fortran (GitHub)](https://github.com/rabbiabram/awesome-fortran)
 - [Beliavsky's Fortran Code on GitHub](https://github.com/Beliavsky/Fortran-code-on-GitHub)
+- [Computational Infrastructure for Geodynamics (CIG)](https://geodynamics.org/)
+- [US EPA Environmental Modeling](https://www.epa.gov/computational-tools-and-databases)
+- [USGS Software](https://www.usgs.gov/products/software)
+- [NCAR Software](https://www.mmm.ucar.edu/models)
